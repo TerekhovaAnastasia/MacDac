@@ -1,0 +1,43 @@
+{
+  "users": {
+    "admin": {
+      "password": "admin123",
+      "clearance": "TOP_SECRET"
+    },
+    "manager": {
+      "password": "pass1",
+      "clearance": "SECRET"
+    },
+    "guest": {
+      "password": "pass2",
+      "clearance": "PUBLIC"
+    }
+  },
+  "objects": {
+    "doc_secret": {
+      "value": "Секретные данные компании[Дополнение от админа][Дополнение от менеджера]",
+      "classification": "TOP_SECRET",
+      "owner": "admin",
+      "acl": {
+        "manager": [
+          "read",
+          "append"
+        ]
+      }
+    },
+    "doc_public": {
+      "value": "Публичная инструкция",
+      "classification": "PUBLIC",
+      "owner": "manager",
+      "acl": {
+        "admin": [
+          "write"
+        ],
+        "guest": [
+          "read",
+          "write"
+        ]
+      }
+    }
+  }
+}
